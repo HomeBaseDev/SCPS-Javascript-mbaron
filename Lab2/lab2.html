@@ -14,6 +14,35 @@
 <h2>Mike Baron</h2>	
 <h3>Part #1: Create a 10x10 multiplication table using only document.write()</h3>
 <script type="text/javascript">
+// header row:
+	document.write("<table>"
+		+ "<tr>"
+		+ "<td class=\"header-row\">x</td>"
+		+ "<td class=\"header-row\">1</td>"
+		+ "<td class=\"header-row\">2</td>"
+		+ "<td class=\"header-row\">3</td>"
+		+ "<td class=\"header-row\">4</td>"
+		+ "<td class=\"header-row\">5</td>"
+		+ "<td class=\"header-row\">6</td>"
+		+ "<td class=\"header-row\">7</td>"
+		+ "<td class=\"header-row\">8</td>"
+		+ "<td class=\"header-row\">9</td>"
+		+ "<td class=\"header-row\">10</td>"
+		+ "</tr>");
+var x = 1, y =1;
+while (x <= 10)
+{
+	document.write("<tr>"
+		+ "<td class=\"header-column\">" + x + "</td>");
+	y=1;
+	while (y <= 10)
+	{
+		document.write("<td>" + (x*y) + "</td>");
+		y++;
+	}
+	document.write("</tr>");
+    x++;
+}
 </script>
 </body>
 </html>
