@@ -10,39 +10,58 @@
 	</style>
 </head>
 <body>
-<h1>Lab 1</h1>
+<h1>Lab 2</h1>
 <h2>Mike Baron</h2>	
-<h3>Part #1: Create a 10x10 multiplication table using only document.write()</h3>
+<h3>Part #1: Create a 10x10 multiplication table using nested loops</h3>
+
 <script type="text/javascript">
-// header row:
-	document.write("<table>"
-		+ "<tr>"
-		+ "<td class=\"header-row\">x</td>"
-		+ "<td class=\"header-row\">1</td>"
-		+ "<td class=\"header-row\">2</td>"
-		+ "<td class=\"header-row\">3</td>"
-		+ "<td class=\"header-row\">4</td>"
-		+ "<td class=\"header-row\">5</td>"
-		+ "<td class=\"header-row\">6</td>"
-		+ "<td class=\"header-row\">7</td>"
-		+ "<td class=\"header-row\">8</td>"
-		+ "<td class=\"header-row\">9</td>"
-		+ "<td class=\"header-row\">10</td>"
-		+ "</tr>");
-var x = 1, y =1;
-while (x <= 10)
-{
-	document.write("<tr>"
-		+ "<td class=\"header-column\">" + x + "</td>");
-	y=1;
-	while (y <= 10)
+
+function pTable(tableSize){
+	// header row:
+	var x = 1, y =1;
+	document.write("<table><tr>"
+		+ "<td class=\"header-row\">x</td>");
+	while (x <= tableSize)
 	{
-		document.write("<td>" + (x*y) + "</td>");
-		y++;
+		document.write("<td class=\"header-row\">" + x + "</td>");
+		x++;
 	}
 	document.write("</tr>");
-    x++;
+	x=1;
+	while (x <= tableSize)
+	{
+		document.write("<tr>"
+			+ "<td class=\"header-column\">" + x + "</td>");
+		y=1;
+		while (y <= tableSize)
+		{
+			document.write("<td>" + (x*y) + "</td>");
+			y++;
+		}
+		document.write("</tr>");
+		x++;
+	}
+	document.write("</table>");
 }
+
+pTable(10);
+</script>
+
+<h3>Part #2: Create a randomly sized multiplication table using nested loops and functions</h3>
+
+<script type="text/javascript">
+// stole this function from the professor's notes :)
+function genRand(max)				//define function that accepts 1 parameter
+	{	
+		var rand = Math.random() * 10; 			// rand = 0 to < max  (0 - 99.999999)
+		rand = Math.floor(rand) + 1;			// rand = 1 to max     (1 - 100)
+		document.write("Random Number: " +  rand + " <br />" );
+		return(rand);	
+	}
+
+pTable(genRand(15));
+
+
 </script>
 </body>
 </html>
