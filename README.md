@@ -11,5 +11,7 @@ http://samsultan.com/javascript
 *password:* 123
 
 Homework answers username/password
+
 *username:* student
+
 *password:* hw[#]  (example) hw1, hw2, etc
