@@ -1,22 +1,22 @@
 <html>
 <head>
-	<title>NYU - SCPS - JavaScript - Lab 1 - Mike Baron</title>
+    <title>NYU - SCPS - JavaScript - Lab 1 - Mike Baron</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<style>
-		p {margin-left: 20px;}
-		.header-row{background-color: #FF0D00; width:45px;}
-		.header-column{background-color: #FF7800; width:45px;}
-		.body-column{background-color: #fff; width:45px;}
-		td {background-color: #ccc;}
-	</style>
+    <style>
+	p {margin-left: 20px;}
+	.header-row{background-color: #FF0D00; width:45px;}
+	.header-column{background-color: #FF7800; width:45px;}
+	.body-column{background-color: #fff; width:45px;}
+	td {background-color: #ccc;}
+    </style>
 </head>
 <body>
+
 <h1>Lab 2</h1>
 <h2>Mike Baron</h2>	
 <h3>Part #1: Create a 10x10 multiplication table using nested loops</h3>
 
 <script type="text/javascript">
-
 function pTable(tableSize){
 	// header row:
 	document.write("<table><tr>"
@@ -39,19 +39,22 @@ function pTable(tableSize){
 	document.write("</table>");
 }
 
+// table with 10 rows x 10 columns
 pTable(10);
 </script>
 
 <h3>Part #2: Create a randomly sized multiplication table using nested loops and functions</h3>
 <h4>I chose a random # between 5 and 15</h4>
+
 <script type="text/javascript">
 function randomIntFromInterval(min,max)
 {
-    var num = Math.floor(Math.random()*(max-min+1)+min);
-    document.write("The Random Number Is: " + num + "<br />");
-    return num;
+	var num = Math.floor(Math.random()*(max-min+1)+min);
+	document.write("The Random Number Is: " + num + "<br />");
+	return num;
 }
 
+// let's do this!
 pTable(randomIntFromInterval(5,15));
 </script>
 </body>
