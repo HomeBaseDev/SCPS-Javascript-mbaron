@@ -7,6 +7,7 @@
 		.header-row{background-color: #FF0D00; width:45px;}
 		.header-column{background-color: #FF7800; width:45px;}
 		.body-column{background-color: #fff; width:45px;}
+		td {background-color: #ccc;}
 	</style>
 </head>
 <body>
@@ -18,28 +19,22 @@
 
 function pTable(tableSize){
 	// header row:
-	var x = 1, y =1;
 	document.write("<table><tr>"
 		+ "<td class=\"header-row\">x</td>");
-	while (x <= tableSize)
-	{
+	for (x=1; x <= tableSize; x++)
 		document.write("<td class=\"header-row\">" + x + "</td>");
-		x++;
-	}
 	document.write("</tr>");
-	x=1;
-	while (x <= tableSize)
+	
+	// body
+	for(x=1;x <= tableSize;x++)
 	{
-		document.write("<tr>"
-			+ "<td class=\"header-column\">" + x + "</td>");
-		y=1;
-		while (y <= tableSize)
-		{
+		// header column
+		document.write("<tr><td class=\"header-column\">" + x + "</td>");
+		
+		// body
+		for (y=1;y <= tableSize;y++)
 			document.write("<td>" + (x*y) + "</td>");
-			y++;
-		}
 		document.write("</tr>");
-		x++;
 	}
 	document.write("</table>");
 }
@@ -48,20 +43,16 @@ pTable(10);
 </script>
 
 <h3>Part #2: Create a randomly sized multiplication table using nested loops and functions</h3>
-
+<h4>I chose a random # between 1 and 15</h4>
 <script type="text/javascript">
-// stole this function from the professor's notes :)
-function genRand(max)				//define function that accepts 1 parameter
-	{	
-		var rand = Math.random() * 10; 			// rand = 0 to < max  (0 - 99.999999)
-		rand = Math.floor(rand) + 1;			// rand = 1 to max     (1 - 100)
-		document.write("Random Number: " +  rand + " <br />" );
-		return(rand);	
-	}
+function randomIntFromInterval(max)
+{
+	var num = Math.floor(Math.random()*(max)+1);
+	document.write("The Random Number Is: " + num + "<br />");
+    return num;
+}
 
-pTable(genRand(15));
-
-
+pTable(randomIntFromInterval(15));
 </script>
 </body>
 </html>
