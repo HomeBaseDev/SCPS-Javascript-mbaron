@@ -15,3 +15,9 @@ Homework answers username/password
 *username:* student
 
 *password:* hw[#]  (example) hw1, hw2, etc
+
+userful code:
+
+foreach (prop in window)
+  document.write(prop + ": " + window.property);
+  
