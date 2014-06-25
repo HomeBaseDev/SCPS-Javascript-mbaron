@@ -14,7 +14,7 @@ Homework answers username/password
 
 *username:* student
 
-*password:* hw[#]  (example) hw1, hw2, etc
+*password:* hw[#]  (example) hw1, hw2, etc or olap
 
 userful code:
 
